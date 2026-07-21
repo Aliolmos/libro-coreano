@@ -1,0 +1,430 @@
+
+:root {
+  --pink-baby: #F8D7E5;    /* rosa bebé, para detalles suaves */
+  --pink-light: #FDECF3;   /* rosa clarito, para fondos */
+  --ivory: #FCF8F4;        /* blanco marfil, color base */
+  --gold: #C89B3C;         /* dorado fuerte, para acentos */
+  --gold-light: #E7C96D;   /* dorado clarito, para brillos */
+  --ink: #6b5544;          /* marrón para el texto */
+}
+
+* {
+  margin: 0;              
+  padding: 0;              
+  box-sizing: border-box;  
+}
+
+html {
+  scroll-behavior: smooth;  
+}
+
+html, body {
+  width: 100%;              
+  overflow-x: hidden;       
+}
+
+body {
+  background: linear-gradient(180deg, var(--ivory) 0%, var(--pink-light) 60%, var(--pink-baby) 100%); 
+  font-family: 'Cormorant Garamond', serif; 
+  color: var(--ink);                        
+  -webkit-text-size-adjust: 100%;           
+}
+
+.gold-text {
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%); 
+  -webkit-background-clip: text;  
+  background-clip: text;
+  color: transparent;             
+}
+
+/* ===== PARTÍCULAS ===== */
+
+#petal-layer, #spark-layer {
+  position: fixed;       
+  inset: 0;               
+  pointer-events: none;   
+  z-index: 40;             
+  overflow: hidden;       
+}
+
+.petal {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle at 30% 30%, #ffd7e6, var(--pink-baby) 70%); 
+  border-radius: 0 60% 0 60%;  
+  opacity: .85;
+  will-change: transform;      
+}
+
+.spark {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;               
+  background: var(--gold-light);
+  box-shadow: 0 0 6px 1px var(--gold-light); 
+  animation: twinkle 3.5s ease-in-out infinite; 
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: .15; transform: scale(.7); } 
+  50%      { opacity: .9;  transform: scale(1.2); } 
+}
+
+/* ===== HERO ===== */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;      
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  overflow: hidden;
+  padding: 0 1rem;         
+}
+
+.bg-blossom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(50vw, 520px); 
+  opacity: .9;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.waves {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+  line-height: 0;   
+  z-index: 1;
+}
+
+/* Logo superior (achicado en PC, tamaño original en celu) */
+.logo-wrap {
+  position: relative;
+  z-index: 5;
+  margin-top: 1.5rem;
+  opacity: 0;                 
+  transform: scale(7.5);       
+  animation: logoInPC 1.6s cubic-bezier(.2,.9,.25,1) .3s forwards; 
+  top: -20px; 
+}
+
+.logo-wrap img {
+  width: 280px;   /* Tamaño más chico para PC */
+}
+
+@keyframes logoInPC {
+  to { opacity: 1; transform: scale(1.6); } 
+}
+
+.book-stage {
+  position: relative;
+  z-index: 10;
+  width: 520px;
+  height: 520px;
+  perspective: 1600px; 
+  margin: 1.5rem 0 1rem;
+}
+
+.book-shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 340px;
+  height: 44px;
+  background: radial-gradient(ellipse, rgba(200,155,60,.35), transparent 70%); 
+  transform: translateX(-50%); 
+  filter: blur(2px);
+}
+
+.book {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d; 
+  width: 320px;
+  height: 415px;
+  left: 50%;
+  top: 47%;
+  margin: -207px 0 0 -160px; 
+}
+
+.book .face {
+  position: absolute;
+  inset: 0;
+  border-radius: 5px;
+  backface-visibility: hidden;  
+  overflow: hidden;
+  box-shadow: 0 14px 55px rgba(120,80,20,.28); 
+}
+
+.book .front {
+  background: var(--ivory);
+}
+
+.book .front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.book .spine {
+  width: 46px;
+  height: 415px;
+  background: linear-gradient(90deg, #e8c98c, var(--gold)); 
+  left: 320px;
+  transform: rotateY(90deg);        
+  transform-origin: left center;    
+}
+
+.book .back {
+  background: linear-gradient(135deg, var(--pink-baby), var(--gold-light));
+  transform: rotateY(180deg); 
+}
+
+.scroll-cue {
+  position: relative;
+  z-index: 5;
+  margin-top: -3.1rem;
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  letter-spacing: .35em;     
+  color: var(--gold);
+  opacity: .75;
+  animation: cueBob 2.4s ease-in-out infinite; 
+}
+
+@keyframes cueBob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(8px); }
+}
+
+/* ===== TEXTO DE LA HISTORIA ===== */
+
+.story {
+  position: relative;
+  z-index: 5;
+  max-width: 640px;
+  margin: 0 auto;           
+  padding: 6rem 1.6rem 8rem;
+  text-align: center;
+}
+
+.story h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem); 
+  font-weight: 600;
+  letter-spacing: .03em;
+  margin-bottom: 2.6rem;
+}
+
+.story p {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  line-height: 1.85;      
+  font-style: italic;
+  color: #7a6248;
+  margin-bottom: 1.4rem;
+}
+
+.reveal-line {
+  opacity: 0;                          
+  transform: translateY(28px) scale(.98); 
+  filter: blur(6px);                   
+  transition: opacity 1s ease, transform 1s ease, filter 1s ease; 
+}
+
+.reveal-line.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);  
+}
+
+/* ===== TREN Y VAGONES ===== */
+
+.train-section {
+  position: relative;
+  height: 220px;
+  min-height: 140px;
+  overflow: hidden;
+  background: linear-gradient(180deg, transparent, rgba(200,155,60,.06));
+}
+
+.rail {
+  position: absolute;
+  left: 0;
+  bottom: 25px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold) 10%, var(--gold-light) 50%, var(--gold) 90%, transparent);
+  opacity: .8;
+}
+
+.rail::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 100%;
+  height: 2px;
+  background-image: repeating-linear-gradient(90deg, var(--gold) 0 3px, transparent 3px 26px);
+  opacity: .4;
+}
+
+.train-track {
+  position: absolute;
+  bottom: 19px;
+  left: 0;
+  width: 200%;
+  transform: translateX(-50%);
+  animation-play-state: paused;
+}
+
+.train-track svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.train-track.playing {
+  animation: trainMove 20s linear infinite;
+}
+
+@keyframes trainMove {
+  from { transform: translateX(-65%); }
+  to   { transform: translateX(5%); }
+}
+
+.mist {
+  position: absolute;
+  bottom: 25px;
+  width: 40px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.55);
+  filter: blur(6px);
+  opacity: 0;
+}
+
+.train-track.playing .mist {
+  animation: mistDrift 2.4s ease-out infinite;
+}
+
+@keyframes mistDrift {
+  0%   { opacity: .5; transform: translate(0,0) scale(1.6); }
+  100% { opacity: 0;  transform: translate(-60px,-30px) scale(1.6); }
+}
+
+/* Vagones más grandes en PC */
+.train-visual {
+  width: 200%;
+  max-width: 750px;
+  margin: 0 auto;
+  transform: scale(2.50); /* Agrandados para la computadora */
+  transform-origin: center bottom;
+  transform: scale(2.95) translateY(19px);
+}
+
+/* ===== REPRODUCTOR DE AUDIO ===== */
+
+.audio-block {
+  position: relative;
+  z-index: 5;
+  width: min(420px, calc(100% - 2.4rem));
+  margin: 0 auto 5rem;
+  padding: 1.4rem 1.6rem;
+  border: 1px solid rgba(255, 255, 254, 0.35);
+  border-radius: 16px;
+  background: rgba(244, 247, 214, 0.4);
+  backdrop-filter: blur(4px);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.audio-block span {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: .68rem;
+  letter-spacing: .28em;
+  color: var(--gold);
+  margin-bottom: .9rem;
+}
+
+.audio-block audio {
+  width: 100%;
+  accent-color: var(--gold);
+}
+
+/* ===== PIE DE PÁGINA ===== */
+
+.footer {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  padding: 4rem 1.5rem 5rem;
+}
+
+.footer .divider {
+  width: 70px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 1.6rem;
+  opacity: .6;
+}
+
+.footer p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--ink);
+}
+
+/* Logo inferior agrandado para PC */
+.footer img {
+  width: 310px; /* Logo de abajo más grande en compu */
+  margin-top: 2rem;
+  opacity: .85;
+}
+
+/* ===== AJUSTES PARA CELULAR (Queda intacto como pediste) ===== */
+
+@media (max-width: 640px) {
+  .petal { width: 10px; height: 10px; }
+  .bg-blossom { width: 58vw; opacity: .75; }
+  .book-stage { width: 360px; height: 360px; }
+  .book { width: 230px; height: 298px; margin: -150px 0 0 -115px; }
+  .book .spine { height: 298px; left: 230px; }
+  
+  .logo-wrap {
+    transform: scale(6.10);
+    top: -80px;
+  }
+  .logo-wrap img { width: 360px; } /* Tamaño original del celu */
+  @keyframes logoIn {
+    to { opacity: 1; transform: scale(3); }
+  }
+
+  .story { padding: 4rem 1.2rem 5rem; }
+  .story h1 { margin-bottom: 2rem; }
+  
+  .train-section { height: 140px; }
+  .train-visual {
+    transform: scale(2.45); /* Escala intacta para celulares */
+    transform: scale(1.65) translateY(15px);
+}
+  
+  .footer { padding: 3rem 1.2rem 3.5rem; }
+  .footer img { width: 250px; } /* Tamaño original del celu abajo */
+}
+
+@media (max-width: 380px) {
+  .book-stage { width: 300px; height: 300px; }
+  .book { width: 195px; height: 253px; margin: -127px 0 0 -98px; }
+  .book .spine { height: 253px; left: 195px; }
+}
+
