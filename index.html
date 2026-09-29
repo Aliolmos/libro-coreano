@@ -1,115 +1,225 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>HAN-RA Editorial — Un viaje hacia Corea</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mi primer paso al coreano · Aprende fácil, habla desde hoy. Libro educativo para aprender coreano desde cero: Hangul, pronunciación, vocabulario y gramática básica, con técnicas fáciles y lecciones por código QR. Silvana A. Monelli, HAN-RA Editorial.">
+<title>Mi primer paso al coreano · Aprendé coreano desde cero</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap">
 <link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 <body>
 
-<div id="petal-layer"></div>
-<div id="spark-layer"></div>
-
-<section class="hero">
-  <img class="bg-blossom" id="bgBlossom" src="assets/bg-blossom.png" alt="">
-  <div class="logo-wrap"><img src="imagenes/logo.png" alt="HAN-RA Editorial"></div>
-
-  <div class="book-stage" id="bookStage">
-    <div class="book-shadow" id="bookShadow"></div>
-    <div class="book" id="book">
-      <div class="face front"><img src="imagenes/frentelibro.png" alt="Mi primer paso al coreano"></div>
-      <div class="face spine"></div>
-      <div class="face back"></div>
-    </div>
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="#inicio">HAN-RA <span>Editorial</span></a>
+    <nav aria-label="Principal">
+      <a href="#temas">Qué aprenderás</a>
+      <a href="#metodo">El método</a>
+      <a href="#para-quien">Para quién es</a>
+      <a href="#autora">La autora</a>
+    </nav>
   </div>
-  <div class="scroll-cue">DESLIZÁ PARA DESCUBRIR</div>
+</header>
 
-  <svg class="waves" viewBox="0 0 1440 180" preserveAspectRatio="none">
-    <path d="M0,90 C300,180 500,20 800,90 C1050,150 1250,60 1440,110 L1440,180 L0,180 Z" fill="#F8D7E5" opacity="0.55"/>
-    <path d="M0,120 C260,60 520,170 800,120 C1080,70 1250,150 1440,100 L1440,180 L0,180 Z" fill="#E7C96D" opacity="0.4"/>
-  </svg>
-</section>
+<main>
+  <!-- ---------- Hero ---------- -->
+  <section class="hero" id="inicio">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="tag">Libro educativo · Coreano desde cero</span>
+        <h1>
+          <span class="t-blue">Mi primer paso</span>
+          <span class="t-orange">al coreano</span>
+        </h1>
+        <p class="slogan">Aprende fácil, habla desde hoy</p>
+        <p class="intro">Un libro para <strong>aprender coreano desde cero</strong>, con técnicas fáciles y lecciones que cobran vida a través de códigos QR. No necesitás saber nada del idioma para empezar.</p>
+        <ul class="facts" aria-label="Datos del libro">
+          <li><span class="dot d-green"></span>Nivel: desde cero</li>
+          <li><span class="dot d-yellow"></span>Técnica del semáforo</li>
+          <li><span class="dot d-red"></span>Audio y guía visual por QR</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-orange" href="#temas">Ver qué vas a aprender</a>
+          <a class="btn btn-line" href="#metodo">Conocer el método</a>
+        </div>
+      </div>
+      <div class="cover">
+        <img src="portada.webp" alt="Tapa de Mi primer paso al coreano: un tren con vagones en forma de libro, escuela y puesto de comida recorre un camino que une un paisaje argentino con Seúl.">
+      </div>
+    </div>
 
-<section class="story">
-  <h1 class="reveal-line gold-text">Un viaje hacia Corea comienza aquí</h1>
-  <p class="reveal-line">Esta caja guarda una experiencia creada para despertar los sentidos y acercarte a la esencia de Corea del Sur.</p>
-  <p class="reveal-line">Al abrirla descubrirás un recorrido donde idioma, cultura y tradición se unen a través de una experiencia sensorial y educativa.</p>
-  <p class="reveal-line">Una esencia inspirada en la naturaleza coreana, detalles cuidadosamente seleccionados y recursos de aprendizaje te acompañarán en el descubrimiento de sus palabras, sonidos y símbolos.</p>
-  <p class="reveal-line">Escaneá el código QR para complementar esta experiencia con contenidos digitales exclusivos.</p>
-  <p class="reveal-line" style="font-family:'Cinzel',serif;font-style:normal;font-size:1.05rem;letter-spacing:.06em;color:var(--gold)">Tu viaje hacia la cultura coreana comienza ahora.</p>
-</section>
+    <div class="rail" aria-hidden="true">
+      <div class="train">
+        <div class="car car-orange"><i></i><i></i><i></i></div>
+        <div class="car car-yellow"><i></i><i></i></div>
+        <div class="car car-sky"><i></i></div>
+      </div>
+    </div>
+  </section>
 
-<div class="audio-block">
-  <span>ESCUCHÁ EL MENSAJE</span>
-  <audio id="audioPlayer" controls src="audio/audio.ogg"></audio>
-</div>
+  <!-- ---------- Temario ---------- -->
+  <section class="topics" id="temas">
+    <div class="wrap">
+      <div class="head">
+        <span class="stop">Estación 1 · Temario</span>
+        <h2>Qué vas a aprender</h2>
+        <p>Todo lo que necesitás para dar tus primeros pasos en coreano, ordenado de lo más simple a lo más completo.</p>
+      </div>
+      <ol class="syllabus">
+        <li class="topic c-orange reveal">
+         
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
+          <h3>Alfabeto Hangul</h3>
+          <p>Vocales, consonantes y cómo se arman las palabras para empezar a leer.</p>
+        </li>
+        <li class="topic c-yellow reveal">
+          
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>
+          <h3>Pronunciación</h3>
+          <p>Cómo suena cada letra, con audios que escuchás desde el código QR.</p>
+        </li>
+        <li class="topic c-sky reveal">
+         
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/><path d="M8 9h8M8 13h5"/></svg>
+          <h3>Vocabulario y frases</h3>
+          <p>Saludos y frases útiles para usar en el día a día desde el primer momento.</p>
+        </li>
+        <li class="topic c-green reveal">
+        
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7" height="6" rx="1.5"/><rect x="14" y="4" width="7" height="6" rx="1.5"/><rect x="8.5" y="14" width="7" height="6" rx="1.5"/><path d="M6.5 10v2h11v-2M12 12v2"/></svg>
+          <h3>Gramática básica</h3>
+          <p>Cómo se construyen las oraciones.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
 
-<section class="train-section" id="trainSection">
-  <div class="rail"></div>
-  <div class="train-track" id="trainTrack">
-    <div class="train-visual">
-      <svg width="950" height="140" viewBox="0 0 950 140">
-        <g id="carriages">
-          <!-- VAGÓN 1: VIOLETA -->
-          <g transform="translate(10,0)">
-            <rect x="0" y="38" width="280" height="58" rx="6" fill="#9b5de5"/>
-            <!-- Ventanas grandes -->
-            <rect x="20" y="48" width="65" height="34" rx="4" fill="#f4e2a0" opacity=".9"/>
-            <rect x="105" y="48" width="65" height="34" rx="4" fill="#f4e2a0" opacity=".9"/>
-            <rect x="190" y="48" width="65" height="34" rx="4" fill="#f4e2a0" opacity=".9"/>
-            <!-- Base inferior del vagón -->
-            <rect x="0" y="90" width="280" height="8" rx="2" fill="#7238b0"/>
-            <!-- Ruedas alineadas con la vía dorada (y=102) -->
-            <circle cx="55" cy="102" r="12" fill="#4a3a28"/>
-            <circle cx="55" cy="102" r="5" fill="#e7c96d"/>
-            <circle cx="225" cy="102" r="12" fill="#4a3a28"/>
-            <circle cx="225" cy="102" r="5" fill="#e7c96d"/>
-          </g>
+  <!-- ---------- Método ---------- -->
+  <section class="method" id="metodo">
+    <div class="wrap">
+      <div class="head">
+        <span class="stop">Estación 2 · El método</span>
+        <h2>Técnicas fáciles para aprender el idioma</h2>
+        <p>Un proyecto educativo diseñado para ser sentido: el aprendizaje no solo se lee, también se escucha y se ve.</p>
+      </div>
+      <div class="methods">
+        <article class="m-card reveal">
+          <div class="light" aria-hidden="true"><span class="l-red"></span><span class="l-yellow"></span><span class="l-green"></span></div>
+          <h3>Técnica del semáforo</h3>
+          <p>Una de las herramientas que vas a aprender es cómo adaptar la forma de escribir según el nivel de formalidad que requiera cada situación.</p>
+        </article>
+        <article class="m-card reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20v.01M17 20h4v-3"/></svg>
+          <h3>Lecciones con código QR</h3>
+          <p>Escaneás el código con el celular y cada lección cobra vida más allá del papel.</p>
+        </article>
+        <article class="m-card reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><path d="M21 15a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2ZM3 15a2 2 0 0 0 2 2h1v-6H5a2 2 0 0 0-2 2Z"/></svg>
+          <h3>Escucha o guía visual</h3>
+          <p>Aprendé mediante la escucha o con la guía visual, como te resulte más fácil.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-          <!-- VAGÓN 2: CELESTE -->
-          <g transform="translate(315,0)">
-            <rect x="0" y="38" width="280" height="58" rx="6" fill="#00bbf9"/>
-            <rect x="20" y="48" width="65" height="34" rx="4" fill="#f4e2a0" opacity=".9"/>
-            <rect x="105" y="48" width="65" height="34" rx="4" fill="#f4e2a0" opacity=".9"/>
-            <rect x="190" y="48" width="65" height="34" rx="4" fill="#f4e2a0" opacity=".9"/>
-            <rect x="0" y="90" width="280" height="8" rx="2" fill="#0081a7"/>
-            <circle cx="55" cy="102" r="12" fill="#4a3a28"/>
-            <circle cx="55" cy="102" r="5" fill="#e7c96d"/>
-            <circle cx="225" cy="102" r="12" fill="#4a3a28"/>
-            <circle cx="225" cy="102" r="5" fill="#e7c96d"/>
-          </g>
+  <!-- ---------- Para quién ---------- -->
+  <section class="who" id="para-quien">
+    <div class="wrap who-grid">
+      <div class="who-copy">
+        <span class="stop">Estación 3 · Para quién es</span>
+        <h2>Para cualquier persona que quiera <em>empezar desde cero</em></h2>
+        <p>No hace falta experiencia previa. Ya sea mediante la escucha o la guía visual, cualquier persona —sin importar su condición— puede emprender este viaje y conectar con el corazón de la cultura coreana.</p>
+      </div>
+      <ul class="checks">
+        <li class="reveal">Nunca estudiaste coreano</li>
+        <li class="reveal">Querés aprender con técnicas simples</li>
+        <li class="reveal">Aprendés mejor escuchando o mirando</li>
+        <li class="reveal">Te interesa la cultura de Corea del Sur</li>
+      </ul>
+    </div>
+  </section>
 
-          <!-- VAGÓN 3: NARANJA -->
-          <g transform="translate(620,0)">
-            <rect x="0" y="38" width="280" height="58" rx="6" fill="#fb8500"/>
-            <rect x="20" y="48" width="65" height="34" rx="4" fill="#f4e2a0" opacity=".9"/>
-            <rect x="105" y="48" width="65" height="34" rx="4" fill="#f4e2a0" opacity=".9"/>
-            <rect x="190" y="48" width="65" height="34" rx="4" fill="#f4e2a0" opacity=".9"/>
-            <rect x="0" y="90" width="280" height="8" rx="2" fill="#cc6200"/>
-            <circle cx="55" cy="102" r="12" fill="#4a3a28"/>
-            <circle cx="55" cy="102" r="5" fill="#e7c96d"/>
-            <circle cx="225" cy="102" r="12" fill="#4a3a28"/>
-            <circle cx="225" cy="102" r="5" fill="#e7c96d"/>
-          </g>
-        </g>
+  <!-- ---------- Puente ---------- -->
+  <section class="bridge">
+    <div class="wrap">
+      <div class="head">
+        <span class="stop">Estación 4 · Obra bilingüe</span>
+        <h2>Del español al coreano</h2>
+        <p>Una obra bilingüe que tiende un puente genuino entre Argentina y Corea del Sur, desde la sensibilidad y el respeto.</p>
+      </div>
+      <svg class="bridge-art" viewBox="0 0 640 170" role="img" aria-label="Ilustración: el Obelisco de Buenos Aires y la torre de Seúl unidos por un puente">
+        <path d="M0 150 Q60 118 150 124 Q200 128 215 140 L215 170 L0 170Z" fill="var(--green)"/>
+        <path d="M425 140 Q445 124 500 122 Q590 118 640 146 L640 170 L425 170Z" fill="var(--green)"/>
+        <path d="M0 170 L640 170" stroke="var(--track)" stroke-width="3"/>
+        <path d="M205 150 Q320 140 435 150 L435 170 L205 170Z" fill="var(--sky)" opacity=".55"/>
+        <path d="M92 132 L100 40 L106 30 L112 40 L120 132Z" fill="#fffaf0" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+        <rect x="84" y="130" width="44" height="7" rx="2" fill="#fffaf0" stroke="var(--ink)" stroke-width="2"/>
+        <path d="M130 124 L160 84 L185 124Z" fill="#a38b86" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M152 95 L160 84 L168 95 L160 92Z" fill="#fff"/>
+        <path d="M200 124 H440" stroke="var(--blue)" stroke-width="5" stroke-linecap="round"/>
+        <path d="M262 124 V70 M378 124 V70" stroke="var(--blue)" stroke-width="5" stroke-linecap="round"/>
+        <path d="M205 118 Q262 70 262 70 Q320 118 378 70 Q435 118 435 118" fill="none" stroke="var(--blue)" stroke-width="2"/>
+        <path d="M230 124 V104 M290 124 V98 M320 124 V106 M350 124 V98 M410 124 V104" stroke="var(--blue)" stroke-width="1.5" opacity=".7"/>
+        <path d="M524 128 L528 60 L532 128Z" fill="#fffaf0" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+        <rect x="518" y="54" width="20" height="12" rx="4" fill="#fffaf0" stroke="var(--ink)" stroke-width="2"/>
+        <path d="M528 54 V26" stroke="var(--orange)" stroke-width="3" stroke-linecap="round"/>
+        <path d="M462 128 V110 H500 V128Z" fill="#c9674a" stroke="var(--ink)" stroke-width="2"/>
+        <path d="M452 112 Q481 92 510 112 Z" fill="var(--blue)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+        <rect x="552" y="84" width="26" height="46" rx="2" fill="var(--sky)" stroke="var(--ink)" stroke-width="2"/>
+        <rect x="582" y="100" width="22" height="30" rx="2" fill="#f2b37a" stroke="var(--ink)" stroke-width="2"/>
+        <path d="M200 40 q8-12 20-4 q10-6 16 4 h-36Z M430 30 q8-12 20-4 q10-6 16 4 h-36Z" fill="#fff" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round"/>
       </svg>
     </div>
-    <div class="mist" style="left:6px"></div>
-    <div class="mist" style="left:30px;animation-delay:.6s"></div>
-    <div class="mist" style="left:-14px;animation-delay:1.2s"></div>
-  </div>
-</section>
+  </section>
 
-<footer class="footer">
-  <div class="divider"></div>
-  <p>감사합니다 · Gracias </p>
-  <img src="imagenes/logo.png" alt="HAN-RA Editorial">
+  <!-- ---------- Autora ---------- -->
+  <section class="author" id="autora">
+    <div class="wrap author-grid">
+      <figure class="back">
+        <img src="contratapa.webp" alt="Contratapa de Mi primer paso al coreano con el texto de presentación del libro.">
+      </figure>
+      <div class="author-copy">
+        <span class="stop">Estación 5 · La autora</span>
+        <h2>Silvana A. Monelli</h2>
+        <p>Busca romper las barreras del idioma proponiendo una pedagogía donde el aprendizaje no solo se lee, sino que se siente.</p>
+        <p>Con este libro acerca el coreano a quienes empiezan desde cero, con lecciones claras, técnicas fáciles y recursos para aprender escuchando o mirando.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- Cierre ---------- -->
+  <section class="final">
+    <div class="wrap">
+      <div class="ticket">
+        <div class="ticket-main">
+          <span class="tag tag-light">Tu boleto</span>
+          <h2>Tu primer paso empieza hoy.</h2>
+          <p>Sumate a este encuentro. Seguí cada paso junto a HAN-RA Editorial.</p>
+          <a class="btn btn-yellow" href="#inicio">Volver al inicio</a>
+        </div>
+        <dl class="ticket-stub">
+          <div><dt>Libro</dt><dd>Mi primer paso al coreano</dd></div>
+          <div><dt>Nivel</dt><dd>Desde cero</dd></div>
+          <div><dt>Autora</dt><dd>Silvana A. Monelli</dd></div>
+          <div><dt>Salida</dt><dd>Córdoba, Argentina</dd></div>
+          <div><dt>ISBN</dt><dd>978-631-91829-4-1</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span class="brand">HAN-RA <span>Editorial</span></span>
+    <span>Mi primer paso al coreano — Silvana A. Monelli</span>
+    <span>Córdoba, Argentina</span>
+  </div>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
